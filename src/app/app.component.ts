@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   newTask: string = '';
   id = 1;
   itemFilter: any = {text: ''};
-  tasksDone = [];
+  tasksDone: any = [];
   title: string;
  
   ngOnInit() {
