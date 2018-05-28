@@ -1,25 +1,22 @@
-<div style="text-align:center">
-  <h1>
-    Najlepsza {{ title }} w sieci!
-  </h1>
-  <img width="300" alt="Angular Logo" src="http://vitaltrading.pl/wp-content/uploads/2016/04/checklist-1000x675.jpg">
-</div>
-
-
+<h1>
+  Najlepsza {{ title }} w sieci!
+</h1>
+<img width="300" alt="Angular Logo" src="http://vitaltrading.pl/wp-content/uploads/2016/04/checklist-1000x675.jpg">
+<br><br>
 <input [(ngModel)]="newTask" placeholder="Wpisz zadanie do wykonania" (keyup.enter)='pushTask()' class="addTask">
 <button (click)="pushTask()">Dodaj Zadanie</button>
-<button type='sort' (click)=sortAZ()>Alfabetycznie</button>
-<button type='sort' (click)=sortZA()>Sort od końca</button>
-<button type='sort' (click)=sortNowe()>Najnowsze</button>
-<button type='sort' (click)=sortStare()>Najstarsze</button>
-
+<button type="sort" (click)="sortAZ()">Alfabetycznie</button>
+<button type="sort" (click)="sortZA()">Sort od końca</button>
+<button type="sort" (click)="sortNewest()">Najnowsze</button>
+<button type="sort" (click)="sortOldest()">Najstarsze</button>
 
 <div class="checkbox">
+  <label class="checkbox-inline"></label>
   <ul>
-    <li *ngFor="let task of tasks |filter:searchText; let ind = index ">
-      <label ng-repeat="task in tasks">
-        <input type="checkbox"  type="checkbox" data-checklist-model="task" data-checklist-value="task" (click)="done(task, ind)"> {{task.title }}, dodane o {{task.date | date: 'EEE d MMM HH:mm:ss yyyy'}}
-      </label> 
+    <li *ngFor="let task of tasks |filter:searchText; let ind = index">
+      <label>
+        <input type="checkbox" type="checkbox" data-checklist-model="task" data-checklist-value="task" (click)="done(task, ind)"> {{task.title }}, dodane o {{task.date | date: 'EEE d MMM HH:mm:ss yyyy'}}
+      </label>
       <span (click)="removeTask(ind)" class="deleteIcon">Remove</span>
     </li>
   </ul>
@@ -27,27 +24,21 @@
 
 <div>
   <ul>
-    <li *ngFor="let task of tasksDone; let ind = index">
-      <label ng-repeat="task in tasksDone">
-        <input type="checkbox" data-checklist-model="task" Checked data-checklist-value="task" (check)="task(task, ind)"> {{task.title }}, dodane o {{task.date | date: 'EEE d MMM HH:mm:ss yyyy'}}
+    <li *ngFor="let task of tasksDone |filter:searchText; let ind = index">
+      <label>
+        <input type="checkbox" data-checklist-model="task" Checked data-checklist-value="task" (check)="task(task, ind)"> {{task.title}}, dodane o {{task.date | date: 'EEE d MMM HH:mm:ss yyyy'}}
       </label>
       {{task.title}}, dodane o {{task.date | date: 'EEE d MMM HH:mm:ss yyyy'}}
-      <span (click)="removeTask1(ind)" class="deleteIcon">Remove</span>
+      <span (click)="removeChecked(ind)" class="deleteIcon">Remove</span>
     </li>
   </ul>
 </div>
 
 Odchaczone i Zrobione
 
-<div class="container">
-  <div>
-    Do odchaczenia {{tasks.length}} wykonanych {{tasksDone.length}} wszystkich {{tasks.length + tasksDone.length}}
-    <ng-container *ngIf="newTask.length >0; else noTask"></ng-container>
-  </div>
+<div>
+  Do odchaczenia {{tasks.length}} wykonanych {{tasksDone.length}} wszystkich {{tasks.length + tasksDone.length}}
+  <ng-container *ngIf="newTask.length >0; else noTask"></ng-container>
+</div>
 
-
-    <input type="text" [(ngModel)]="searchText">
- 
-
-    
-  
+<input type="text" [(ngModel)]="searchText">
