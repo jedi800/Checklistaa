@@ -5,7 +5,7 @@ import { Task } from './task/task.component';
 import { SearchFilterPipe } from './filter.pipe';
 
 
-@Component({
+@Component ({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
