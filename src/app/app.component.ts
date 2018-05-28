@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
  
   ngOnInit() {
     this.title = '';
-    this.tasks = []
+    this.tasks = [];
   }
 
   pushTask = function (index) {
