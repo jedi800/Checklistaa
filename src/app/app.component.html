@@ -28,14 +28,14 @@
       <label>
         <input type="checkbox" data-checklist-model="task" Checked data-checklist-value="task" (check)="task(task, ind)"> {{task.title}}, dodane o {{task.date | date: 'EEE d MMM HH:mm:ss yyyy'}}
       </label>
-      {{task.title}}, dodane o {{task.date | date: 'EEE d MMM HH:mm:ss yyyy'}}
+      {{task.title}}, dodane o {{task.date | date:'EEE d MMM HH:mm:ss yyyy'}}
       <span (click)="removeChecked(ind)" class="deleteIcon">Remove</span>
     </li>
   </ul>
 </div>
 
-Odchaczone i Zrobione
-
+Wykonane
+<br>
 <div>
   Do odchaczenia {{tasks.length}} wykonanych {{tasksDone.length}} wszystkich {{tasks.length + tasksDone.length}}
   <ng-container *ngIf="newTask.length >0; else noTask"></ng-container>
