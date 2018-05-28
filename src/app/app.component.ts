@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
     this.tasks.splice(index, 1);
   }
 
-  removeChecked = function (index) {
+  removeCompleted = function (index) {
     this.tasksDone.splice(index, 1);
   }
 
