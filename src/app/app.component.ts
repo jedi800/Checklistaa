@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { discardPeriodicTasks } from '@angular/core/testing';
 import { Injectable, Pipe, PipeTransform } from '@angular/core';
 import { Task } from './task/task.component';
-import {SearchFilterPipe} from './filter.pipe';
+import { SearchFilterPipe } from './filter.pipe';
 
 
 @Component({
