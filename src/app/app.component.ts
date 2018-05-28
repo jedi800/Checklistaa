@@ -5,7 +5,7 @@ import { Task } from './task/task.component';
 import { SearchFilterPipe } from './filter.pipe';
 
 
-@Component ({
+@Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   tasks: Task[] = [];
   newTask: string = '';
   id = 1;
-  itemFilter: any = { text: '' };
+  itemFilter: any = {text: ''};
   tasksDone = [];
   title: string;
  
