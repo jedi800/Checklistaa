@@ -4,6 +4,7 @@ import { Injectable, Pipe, PipeTransform } from '@angular/core';
 import { SearchFilterPipe } from './filter.pipe';
 import { Task } from './task/task.component'
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -32,7 +33,7 @@ export class AppComponent implements OnInit {
       };
 
       this.tasks.push(newTaskObject);
-      this.newTask = " ";
+      this.newTask = "";
     }
   }
 
