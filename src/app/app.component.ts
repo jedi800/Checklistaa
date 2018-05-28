@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
     this.tasksDone.splice(index, 1);
   }
 
-  done(task: string, ind) {
+  Completed(task: string, ind:number) {
     this.tasksDone.push(task);
     this.tasks.splice(ind, 1);
   }
