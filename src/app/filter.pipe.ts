@@ -1,11 +1,13 @@
 import { Pipe, PipeTransform, Injectable, } from '@angular/core';
 
+
 @Pipe({
   name: 'filter'
 })
 
 export class SearchFilterPipe implements PipeTransform {
 
+  
   transform(tasks: any[], searchText: string): any[] {
 
     if (searchText) {
