@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
     this.title = '';
     this.tasks = [];
   }
-
+//english language
   pushTask = function (index) {
     if (this.newTask) {
       const newTaskObject: Task = {
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
     this.tasksDone.splice(index, 1);
   }
 
-  Completed(task: string, ind:number) {
+  completed(task: string, ind:number) {
     this.tasksDone.push(task);
     this.tasks.splice(ind, 1);
   }
