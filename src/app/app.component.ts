@@ -54,12 +54,12 @@ export class AppComponent implements OnInit {
     this.tasksDone.push(task);
   }
 
-  sortNewest() {
+  sortNew() {
     this.tasksDone = this.tasksDone.sort((a, b) => a.date.getTime() - b.date.getTime());
     this.tasks = this.tasks.sort((a, b) => a.date.getTime() - b.date.getTime());
   }
 
-  sortOldest() {
+  sortOld() {
     this.tasksDone = this.tasksDone.sort((a, b) => b.date.getTime() - a.date.getTime());
     this.tasks = this.tasks.sort((a, b) => b.date.getTime() - a.date.getTime());
   }
