@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { Injectable, Pipe, PipeTransform } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { SearchFilterPipe } from './filter.pipe';
 import { Task } from './task/task.component';
+import { SearchFilterPipe } from './filter.pipe';
 
 
 @NgModule({
