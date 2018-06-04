@@ -23,5 +23,3 @@ import { SearchFilterPipe } from './filter.pipe';
 })
 
 export class AppModule { }
-
-
