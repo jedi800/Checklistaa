@@ -13,8 +13,6 @@ import { Task } from './task/task.component';
 export class AppComponent implements OnInit {
   tasks: Task[] = [];
   newTask: string = '';
-  id = 1;
-  itemFilter: any = { text: '' };
   tasksCompleted: any = [];
   title: string;
 
