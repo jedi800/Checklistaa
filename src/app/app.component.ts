@@ -49,7 +49,6 @@ export class AppComponent implements OnInit {
   uncheck(task: any, ind) {
     this.tasks.push(task);
     this.tasksCompleted.splice(ind, 1);
-
   }
 
   sortNew() {

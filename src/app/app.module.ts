@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { Task } from './task/task.component';
 import { SearchFilterPipe } from './filter.pipe';
 
-
 @NgModule({
   declarations: [
     AppComponent,
