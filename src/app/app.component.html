@@ -3,7 +3,7 @@
 </h1>
 <img width="300" alt="Angular Logo" src="http://vitaltrading.pl/wp-content/uploads/2016/04/checklist-1000x675.jpg">
 <br>
-<input [(ngModel)]="newTask" placeholder="Wpisz zadanie do wykonania" (keyup.enter)='pushTask()' class="addTask">
+<input [(ngModel)]="newTask" placeholder="Wpisz zadanie do wykonania" (keyup.enter)="pushTask()" class="addTask">
 <button (click)="pushTask()">Dodaj Zadanie</button>
 <button type="sort" (click)="sortAZ()">Alfabetycznie</button>
 <button type="sort" (click)="sortZA()">Sort od końca</button>
