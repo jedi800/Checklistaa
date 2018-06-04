@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform, Injectable, } from '@angular/core';
 
-
 @Pipe({
   name: 'filter'
 })
