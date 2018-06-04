@@ -49,3 +49,7 @@ div {
   text-align: left;
   line-height: 40px;
 }
+
+.container{
+  display: flex; justify-content: space-around;
+}
