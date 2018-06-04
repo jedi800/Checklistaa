@@ -5,8 +5,7 @@ import { Pipe, PipeTransform, Injectable, } from '@angular/core';
 
 export class SearchFilterPipe implements PipeTransform {
   transform(tasks: any[], searchText: string): any[] {
-    if (searchText) {
-      searchText = searchText.toLowerCase();
+    if (tasks && searchText) {
       return tasks.filter(el => el.title.toLowerCase().indexOf(searchText) > -1);
     }
     return tasks;
