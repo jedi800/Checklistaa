@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     this.title = '';
     this.tasks = [];
   }
-//english language
+
   pushTask = function (index) {
     if (this.newTask) {
       const newTaskObject: Task = {
