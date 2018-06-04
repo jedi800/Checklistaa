@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Injectable, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnInit, Injectable, Pipe, PipeTransform } from '@angular/core';
 import { SearchFilterPipe } from './filter.pipe';
 import { Task } from './task/task.component';
 
