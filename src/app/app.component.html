@@ -11,33 +11,32 @@
 <button type="sort" (click)="sortOld()">Najstarsze</button>
 
 <div class="checkbox">
-  <label class="checkbox-inline"></label>
   <ul>
     <li *ngFor="let task of tasks |filter:searchText; let ind = index">
-      <label>
-        <input type="checkbox" type="checkbox" data-checklist-model="task" data-checklist-value="task" (click)="done(task, ind)"> {{task.title }}, dodane o {{task.date | date: 'EEE d MMM HH:mm:ss yyyy'}}
+      <label class="checkbox-inline">
+        <input type="checkbox" type="checkbox" data-checklist-model="task" Unchecked data-checklist-value="task" (click)="completed(task, ind)"> {{task.title }}, dodane o {{task.date | date: 'EEE d MMM HH:mm:ss yyyy'}}
       </label>
       <span (click)="removeTask(ind)" class="deleteIcon">Remove</span>
     </li>
   </ul>
 </div>
 
-<div>
+Wykonane
+<br>
+<div class="checkbox">
   <ul>
-    <li *ngFor="let task of tasksDone |filter:searchText; let ind = index">
-      <label>
-        <input type="checkbox" data-checklist-model="task" Checked data-checklist-value="task" (check)="task(task, ind)"> {{task.title}}, dodane o {{task.date | date: 'EEE d MMM HH:mm:ss yyyy'}}
+    <li *ngFor="let task of tasksCompleted |filter:searchText; let ind = index">
+      <label class="checkbox-inline">
+        <input type="checkbox" type="checkbox" data-checklist-model="task" Checked data-checklist-value="task" (click)="uncheck(task, ind)"> {{task.title}}, dodane o {{task.date | date: 'EEE d MMM HH:mm:ss yyyy'}}
       </label>
       {{task.title}}, dodane o {{task.date | date:'EEE d MMM HH:mm:ss yyyy'}}
-      <span (click)="removeChecked(ind)" class="deleteIcon">Remove</span>
+      <span (click)="removeCompleted(ind)" class="deleteIcon">Remove</span>
     </li>
   </ul>
 </div>
 
-Wykonane
-<br>
 <div>
-  Do odchaczenia {{tasks.length}} wykonanych {{tasksDone.length}} wszystkich {{tasks.length + tasksDone.length}}
+  Do odchaczenia {{tasks.length}} wykonanych {{tasksCompleted.length}} wszystkich {{tasks.length + tasksCompleted.length}}
   <ng-container *ngIf="newTask.length >0; else noTask"></ng-container>
 </div>
 

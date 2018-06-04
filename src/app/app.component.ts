@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   newTask: string = '';
   id = 1;
   itemFilter: any = { text: '' };
-  tasksDone: any = [];
+  tasksCompleted: any = [];
   title: string;
 
   ngOnInit() {
@@ -41,36 +41,37 @@ export class AppComponent implements OnInit {
   }
 
   removeCompleted = function (index) {
-    this.tasksDone.splice(index, 1);
+    this.tasksCompleted.splice(index, 1);
   }
 
-  completed(task: string, ind:number) {
-    this.tasksDone.push(task);
+  completed(task: string, ind: number) {
+    this.tasksCompleted.push(task);
     this.tasks.splice(ind, 1);
   }
 
-  uncheck(task: string, ind) {
-    this.tasksDone.splice(ind, 1);
-    this.tasksDone.push(task);
+  uncheck(task: any, ind) {
+    this.tasks.push(task);
+    this.tasksCompleted.splice(ind, 1);
+
   }
 
   sortNew() {
-    this.tasksDone = this.tasksDone.sort((a, b) => a.date.getTime() - b.date.getTime());
+    this.tasksCompleted = this.tasksCompleted.sort((a, b) => a.date.getTime() - b.date.getTime());
     this.tasks = this.tasks.sort((a, b) => a.date.getTime() - b.date.getTime());
   }
 
   sortOld() {
-    this.tasksDone = this.tasksDone.sort((a, b) => b.date.getTime() - a.date.getTime());
+    this.tasksCompleted = this.tasksCompleted.sort((a, b) => b.date.getTime() - a.date.getTime());
     this.tasks = this.tasks.sort((a, b) => b.date.getTime() - a.date.getTime());
   }
 
   sortAZ() {
     this.tasks = this.tasks.sort((a, b) => a.title.localeCompare(b.title));
-    this.tasksDone = this.tasksDone.sort((a, b) => a.title.localeCompare(b.title));
+    this.tasksCompleted = this.tasksCompleted.sort((a, b) => a.title.localeCompare(b.title));
   }
 
   sortZA() {
     this.tasks = this.tasks.sort((b, a) => a.title.localeCompare(b.title));
-    this.tasksDone = this.tasksDone.sort((a, b) => b.title.localeCompare(a.title));
+    this.tasksCompleted = this.tasksCompleted.sort((a, b) => b.title.localeCompare(a.title));
   }
 }
