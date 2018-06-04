@@ -13,10 +13,8 @@ export class AppComponent implements OnInit {
   tasks: Task[] = [];
   newTask: string = '';
   tasksCompleted: any = [];
-  title: string;
-
+  
   ngOnInit() {
-    this.title = '';
     this.tasks = [];
   }
 
