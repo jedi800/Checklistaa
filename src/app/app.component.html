@@ -37,7 +37,7 @@ Wykonane
 
 <div>
   Do odchaczenia {{tasks.length}} wykonanych {{tasksCompleted.length}} wszystkich {{tasks.length + tasksCompleted.length}}
-  <ng-container *ngIf="newTask.length >0; else noTask"></ng-container>
+  <ng-container *ngIf="newTask.length >0"></ng-container>
 </div>
 
 <input type="text" [(ngModel)]="searchText">
